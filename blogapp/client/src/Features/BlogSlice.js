@@ -49,17 +49,21 @@ const blogSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            // Share Blog
             .addCase(shareBlog.pending, (state) => {
                 state.isLoading = true;
             })
             .addCase(shareBlog.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = true;
+                state.blogs.unshift(action.payload.blog);
             })
             .addCase(shareBlog.rejected, (state) => {
                 state.isLoading = false;
                 state.isError = true;
             })
+
+            // Get Blogs
             .addCase(getBlogs.pending, (state) => {
                 state.isLoading = true;
             })
@@ -72,6 +76,8 @@ const blogSlice = createSlice({
                 state.isLoading = false;
                 state.isError = true;
             })
+            
+            // Like Blog
             .addCase(likeBlog.pending, (state) => {
                 state.isLoading = true;
             })

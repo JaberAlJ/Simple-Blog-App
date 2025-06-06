@@ -23,7 +23,12 @@ const ShareBlog = () => {
         <Form>
             <FormGroup>
                 <Label for="blogContent">Blog Content</Label>
-                <Input type="textarea" id="blogContent" onChange={(e) => setBlogContent(e.target.value)}/>
+                <Input 
+                    type="textarea" 
+                    id="blogContent" 
+                    placeholder="Write your blog here..."
+                    onChange={(e) => setBlogContent(e.target.value)}
+                />
             </FormGroup>
             <Button onClick={handleShare}>Share</Button>
         </Form>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from "reactstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../Features/UserSlice";
 
 const Login = () => {
@@ -56,6 +56,14 @@ const Login = () => {
                     <Button  onClick={handleSubmit}>Login</Button>
                 </Row>
             </Form>
+            <hr/>
+            <Row>
+                <Col>
+                    <p>
+                        Don't have an account? <Link to='/registration'>Register</Link>
+                    </p>
+                </Col>
+            </Row>
         </Container>
     );
 }
