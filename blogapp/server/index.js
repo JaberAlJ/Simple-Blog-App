@@ -62,29 +62,6 @@ app.post("/logout", async (req, res) => {
     res.status(200).send({ msg: "Logout successfully" });
 });
 
-app.post("/update-profile/:id", async (req, res) => {
-    try {
-        const userID = req.params.id;
-        const name = req.body.name;
-        const email = req.body.email;
-        const password = req.body.password;
-
-        const user = await UserModel.findOne({ _id: userID });
-        if (!user) {
-            return res.status(500).send({ msg: "User not found" });
-        }
-        const passwordMatch = await bcrypt.compare(password, user.password);
-        if (!passwordMatch) {
-            const hashedPassword = await bcrypt.hash(password, 10);
-            user.password = hashedPassword;
-        }
-        await user.save();
-        res.status(200).send({ user: user, msg: "User profile updated successfully" });
-    } catch (err) {
-        res.status(500).send({ error: err, msg: "An error occurred" });
-    }
-});
-
 // ===================================== Blog API =====================================
 app.post("/share-blog", async (req, res) => {
     try {

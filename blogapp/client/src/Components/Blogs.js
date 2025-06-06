@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Table } from "reactstrap";
 import { getBlogs, likeBlog } from "../Features/BlogSlice";
 import { FaHeart } from "react-icons/fa";
+import moment from "moment";
 
 const Blogs = () => {
     const user = useSelector((state) => state.users.user);
@@ -35,8 +36,8 @@ const Blogs = () => {
             <Table>
                 <thead>
                     <tr>
-                        <th>Blog</th>
-                        <th>Like</th>
+                        <th><h4>Blog</h4></th>
+                        <th><h4>Like</h4></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,14 +45,14 @@ const Blogs = () => {
                         <tr key={blog._id}>
                             <td>
                                 <p>{blog.blogContent}</p>
-                                <p><b>{blog.bloggedBy}</b></p>
-                                <p>{blog.createdAt}</p>
+                                <p>{blog.bloggedBy}</p>
+                                <p>{moment(blog.createdAt).fromNow()}</p>
                             </td>
                             <td>
                                 <a href="#" onClick={() => handleBlogLike(blog._id)}>
                                     <FaHeart />
                                 </a>
-                                {blog.likes.count}
+                                {' '}{blog.likes.count}
                             </td>
                         </tr>
                     ))}

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { Nav, Navbar, NavItem } from "reactstrap";
+import { Nav, Navbar, NavItem, NavLink } from "reactstrap";
 import { storePersist } from "../Store/store";
 import { FaHome, FaUserAlt, FaSignOutAlt } from "react-icons/fa";
 import { logout } from "../Features/UserSlice";
@@ -22,35 +22,27 @@ const Header = () => {
         <Navbar>
             <Nav>
                 {user.email ? <NavItem>
-                    <Link to='/'>
-                        <FaHome id="homeLink" />Home
-                    </Link>
+                    <NavLink>
+                        <Link to='/'>
+                        <FaHome id="homeLink" />{' '}Home
+                        </Link>
+                    </NavLink>
                 </NavItem> : null}
-                {user.email ? null : (
-                    <>
-                        <NavItem>
-                            <Link to='/registration'>
-                                Registration
-                            </Link>
-                        </NavItem>
-                        <NavItem>
-                            <Link to='/login'>
-                                Login
-                            </Link>
-                        </NavItem>
-                    </>
-                )}
                 {user.email ? (
                     <>
                         <NavItem>
-                            <Link to='/profile'>
-                                <FaUserAlt id="profileLink" />Profile
-                            </Link>
+                            <NavLink>
+                                <Link to='/profile'>
+                                <FaUserAlt id="profileLink" />{' '}Profile
+                                </Link>
+                            </NavLink>
                         </NavItem>
                         <NavItem>
-                            <Link onClick={handleLogout}>
-                                <FaSignOutAlt id="logOutLink" />Logout
-                            </Link>
+                            <NavLink>
+                                <Link onClick={handleLogout}>
+                                <FaSignOutAlt id="logOutLink" />{' '}Logout
+                                </Link>
+                            </NavLink>
                         </NavItem>
                     </>
                 ) : null}

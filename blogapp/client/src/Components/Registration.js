@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from "reactstrap";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../Features/UserSlice";
 
 const Registration = () => {
@@ -69,6 +69,14 @@ const Registration = () => {
                     <Button>Register</Button>
                 </Row>
             </Form>
+            <hr />
+            <Row>
+                <Col>
+                    <p>
+                        Already have an account? <Link to='/login'>Login</Link>
+                    </p>
+                </Col>
+            </Row>
         </Container>
     );
 }
