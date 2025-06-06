@@ -1,0 +1,9 @@
+{
+    "routes": {
+        "/home": "index.html",
+        "/": "index.html",
+        "/profile": "index.html",
+        "/register": "index.html",
+        "/404": "index.html"
+    }
+}
