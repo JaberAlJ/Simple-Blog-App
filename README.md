@@ -2,9 +2,6 @@
 
 A full-stack blog application built with the **MERN stack** (MongoDB, Express.js, React, Node.js). This project demonstrates CRUD functionality, API integration, and client-server communication.
 
----
-
-
 ## ✍️ About the Author
 > Written by: [*JaberAlJ*](https://github.com/JaberAlJ)
 
