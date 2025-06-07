@@ -1,22 +1,56 @@
-# Simple-Blog-App
-Simple Blog App using MERN stack.
+# 📓 Simple Blog App
+
+A full-stack blog application built with the **MERN stack** (MongoDB, Express.js, React, Node.js). This project demonstrates CRUD functionality, API integration, and client-server communication.
 
 ---
 
-## Getting Started:
-1. Install dependencies in both client and server directories:
-    - `\blogapp\client> npm i`
-    - `\blogapp\server> npm i`
+## 🚀 Getting Started
 
-2. Create a `.env` file in the **client\src** directory with the following content:
+Follow these steps to set up the development environment on your local machine.
+
+### 1. Install Dependencies
+
+Navigate to the respective directories and run the following commands:
+
+```bash
+# Client setup
+cd blogapp/client
+npm install
+
+# Server setup
+cd blogapp/server
+npm install
 ```
+
+### 2. Configure Environment Variables
+
+🔧 **Client Environment**
+
+Create a `.env` file inside the `client/src` directory with the following content:
+
+```env
 REACT_APP_SERVER_URL=http://localhost:3001
 ```
-3. Create a `.env` file in the **server** directory with the following content:
+
+🛠️ **Server Environment**
+
+Create a `.env` file inside the `server` directory with the following credentials:
+
+```env
+PORT=3001
+DB_USER=your_mongodb_username
+DB_PASSWORD=your_mongodb_password
+DB_NAME=your_database_name
+DB_CLUSTER=your_cluster_name
 ```
-PORT = 3001
-DB_USER = MongoDB_username
-DB_PASSWORD = MongoDB_password
-DB_NAME = MongoDB_database_name
-DB_CLUSTER = MongoDB_cluster_name
+> ⚠️ Ensure that your MongoDB URI is correctly constructed in your server's configuration file using the above variables.
+
+---
+
+## 📂 Folder Structure Overview
+
+```
+blogapp/
+├── client/      # React frontend
+└── server/      # Express backend
 ```
